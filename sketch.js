@@ -355,7 +355,7 @@ async function draw() {
       MainBlood.addImage(Bl)
       MainBlood.scale=1
       MainBloodGr.add(MainBlood)
-  
+      MainBlood.visible=false
       PoliceKilled+=1
       ammoS.destroy();
       policeC.destroy();
@@ -452,6 +452,7 @@ async function draw() {
       CarEX.play();
       PoliceKilled+=1
        MTGr.destroyEach();
+       ammoS.destroy();
        CarEX.play();
      }
      else{
@@ -465,7 +466,7 @@ async function draw() {
       Ex3Gr.add(Ex3)
       CarEX.play();
       PoliceKilled+=1
-
+      ammoS.destroyEach();
       MTruckGr.destroyEach();
 
        CarEX.play();
@@ -627,9 +628,11 @@ async function draw() {
     }
     if(CammoGr.isTouching(Plpc)){
       ammoLimit=50
+      CammoGr.destroyEach();
     }
     if(CMissileGr.isTouching(Plpc)){
       MissileLimit=10
+      CMissileGr.destroyEach();
     }
 
 
